@@ -59,12 +59,17 @@ enum DiplomaStatus {
   REJECTED
   FULFILLED
 }
+enum StepStatus {
+  APPROVED
+  REJECTED
+}
 
 // Step model to represent each step of the diploma process
 model Step {
   id          Int       @id @default(autoincrement())
   diploma     Diploma   @relation(fields: [diplomaId], references: [id])
   diplomaId   Int
+  status      StepStatus
   stepNumber  Int       // Step number in the diploma process
   comments    Comment[] // Reference to the Comment model for comments in each step
 
