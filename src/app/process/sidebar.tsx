@@ -45,7 +45,8 @@ let json = [
 export function SideBar() {
   return (
     <Tabs aria-label="Tabs with icons" className="flex flex-col" style="underline">
-      <Tabs.Item active title="step 1" icon={HiUserCircle}>{localStorage?.getItem("role") === "STUDENT" ?(
+      <Tabs.Item active title="step 1" icon={HiUserCircle}>
+        {localStorage?.getItem("role") === "STUDENT" ?(
         <CDynamicForm
           name="diploma"
           url="/diploma/create"
