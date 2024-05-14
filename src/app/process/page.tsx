@@ -9,58 +9,14 @@ import API from "@/utils/api";
 import { useQuery } from "@tanstack/react-query";
 import { SideBar } from "./sidebar";
 import CDynamicForm from "../form/dynamicForm";
-let json = [
-  {
-    label: "name",
-    name: "name",
-    type: "string",
-    inputtype: "text",
-    required: true,
-    listName: "role_name",
-    listId: "id"
-  },
-  {
-    label: "studentId",
-    name: "studentId",
-    type: "number",
-    inputtype: "number",
-    required: true,
-    listName: "role_name",
-    listId: "id"
-  },
-  {
-    label: "teacherId",
-    name: "teacherId",
-    type: "number",
-    inputtype: "number",
-    required: true,
-    listName: "role_name",
-    listId: "id"
-  },
-
-  {
-    label: "diploma",
-    name: "diploma",
-    type: "file",
-    inputtype: "file",
-    required: true,
-    listName: "role_name",
-    listId: "id"
-  }
-];
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between ">
       <Header />
-      <div className="flex ">
+      <div className="flex w-full container m-auto justify-between">
         <SideBar />
-        <CDynamicForm
-          name="diploma"
-          url="/diploma/create"
-          json={json}
-          method="POST"
-        />
+        
       </div>
     </main>
   );

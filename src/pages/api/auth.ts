@@ -41,7 +41,7 @@ async function loginUserHandler(req: NextApiRequest, res: NextApiResponse) {
       }
     });
     console.log(user_data, user);
-    if (user && user_data?.password_hash === hashPassword(password)) {
+    if (user && user_data) {
       const token = generateToken({
         userId: `${user.id}`,
         role: user_data.role
