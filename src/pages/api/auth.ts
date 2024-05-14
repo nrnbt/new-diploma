@@ -46,7 +46,9 @@ async function loginUserHandler(req: NextApiRequest, res: NextApiResponse) {
         userId: `${user.id}`,
         role: user_data.role
       });
-      return res.status(200).json({ ...exclude(user, ["password"]), token });
+      return res
+        .status(200)
+        .json({ ...exclude(user, ["password"]), token, role: user_data.role });
     } else {
       return res.status(401).json({ message: "invalid credentials" });
     }

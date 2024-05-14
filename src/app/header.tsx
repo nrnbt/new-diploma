@@ -13,7 +13,9 @@ function Header() {
         <div className="flex items-center gap-10 text-xl">
           <Link href="/">Home page</Link>
           <Link href="/diploma">Diploma</Link>
-          <Link href="/process">Process</Link>
+          {localStorage?.getItem("role") && (
+            <Link href="/process">Process</Link>
+          )}{" "}
           <Link href="/login">login</Link>
         </div>
       </div>
