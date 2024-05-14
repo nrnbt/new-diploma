@@ -1,0 +1,85 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+}
+
+// Define the User model
+// schema.prisma
+
+// User model to store both students and teachers
+// schema.prisma
+
+// User model to store both students and teachers
+model UserD {
+  id        Int      @id @default(autoincrement())
+  username  String   @unique
+  password_hash       String
+  role      Role     // Enum type for role (student or teacher)
+  studentDiplomas Diploma[] @relation("studentDiplomas") // Relation name for diplomas where user is a student
+  teacherDiplomas Diploma[] @relation("teacherDiplomas") // Relation name for diplomas where user is a teacher
+  userComments         Comment[] @relation("userComments") // Relation name for diplomas where user is a teacher
+
+  @@map("users")
+}
+
+// Enum for user roles
+enum Role {
+  STUDENT
+  TEACHER
+}
+
+// Diploma model to store information about diplomas
+model Diploma {
+  id          Int         @id @default(autoincrement())
+  student     UserD        @relation("studentDiplomas", fields: [studentId], references: [id])
+  studentId   Int
+  name        String
+  teacher     UserD        @relation("teacherDiplomas", fields: [teacherId], references: [id])
+  teacherId   Int
+  steps       Step[]      // Reference to the Step model for each step of the diploma process
+  file        String      // Path to the PDF file of the diploma
+  status      DiplomaStatus // Enum type for diploma status (pending, approved, rejected)
+  finalPoints Int?        // Points given by teacher in the 5th step
+
+  @@map("diplomas")
+}
+
+// Enum for diploma status
+enum DiplomaStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  FULFILLED
+}
+
+// Step model to represent each step of the diploma process
+model Step {
+  id          Int       @id @default(autoincrement())
+  diploma     Diploma   @relation(fields: [diplomaId], references: [id])
+  diplomaId   Int
+  stepNumber  Int       // Step number in the diploma process
+  comments    Comment[] // Reference to the Comment model for comments in each step
+
+  @@map("steps")
+}
+
+// Comment model to store comments for each step
+model Comment {
+  id        Int       @id @default(autoincrement())
+  step      Step      @relation(fields: [stepId], references: [id])
+  stepId    Int
+  user      UserD      @relation("userComments",fields: [userId], references: [id])
+  userId    Int
+  text      String    // Comment text
+  createdAt DateTime  @default(now())
+
+  @@map("comments")
+}
