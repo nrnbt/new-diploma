@@ -42,13 +42,13 @@ const SignInPage: FC = function () {
   return (
     <div className="flex flex-col items-center justify-center px-6 lg:h-screen lg:gap-y-12">
       <div className="my-6 flex items-center gap-x-1 lg:my-0">
-        <img
+        {/* <img
           alt="Flowbite logo"
           src="https://flowbite.com/docs/images/logo.svg"
           className="mr-3 h-12"
-        />
+        /> */}
         <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
-          Flowbite
+          {/* Flowbite */}
         </span>
       </div>
       <Card
@@ -56,49 +56,49 @@ const SignInPage: FC = function () {
         imgAlt=""
         className="w-full md:max-w-screen-sm [&>img]:hidden md:[&>img]:w-96 md:[&>img]:p-0 md:[&>*]:w-full md:[&>*]:p-16 lg:[&>img]:block dark:bg-gray-800">
         <h1 className="mb-3 text-2xl font-bold dark:text-white md:text-3xl">
-          Sign in to platform
+          Админ
         </h1>
         <form action="submit" onSubmit={login}>
           <div className="mb-4 flex flex-col gap-y-3">
-            <Label htmlFor="username">Your username</Label>
+            <Label htmlFor="username">Цахим шуудан</Label>
             <TextInput
               id="username"
               name="username"
-              placeholder="name@company.com"
+              placeholder="Цахим хаяг оруулна уу"
               type="username"
             />
           </div>
           <div className="mb-6 flex flex-col gap-y-3">
-            <Label htmlFor="password">Your password</Label>
+            <Label htmlFor="password">Нууц үг</Label>
             <TextInput
               id="password"
               name="password"
-              placeholder="Password"
+              placeholder="Нууц үг оруулна уу"
               type="password"
             />
           </div>
           <div className="mb-6 flex items-center justify-between">
             <div className="flex items-center gap-x-3">
               <Checkbox id="rememberMe" name="rememberMe" />
-              <Label htmlFor="rememberMe">Remember me</Label>
+              <Label htmlFor="rememberMe">Намайг сана</Label>
             </div>
             <a
               href="#"
               className="w-1/2 text-right text-sm text-primary-600 dark:text-primary-300">
-              Lost Password?
+              Нууц үгээ мартсан уу?
             </a>
           </div>
           <div className="mb-6">
             <Button type="submit" className="w-full lg:w-auto bg-blue-600">
-              Login to your account
+              Нэвтрэх
             </Button>
           </div>
-          <p className="text-sm text-gray-500 dark:text-gray-300">
+          {/* <p className="text-sm text-gray-500 dark:text-gray-300">
             Not registered?&nbsp;
             <a href="#" className="text-primary-600 dark:text-primary-300">
               Create account
             </a>
-          </p>
+          </p> */}
         </form>
       </Card>
     </div>

@@ -45,7 +45,7 @@ let json = [
 export function SideBar() {
   return (
     <Tabs aria-label="Tabs with icons" className="flex flex-col" style="underline">
-      <Tabs.Item active title="step 1" icon={HiUserCircle}>
+      <Tabs.Item active title="Үзлэг 1" icon={HiUserCircle}>
         {localStorage?.getItem("role") === "STUDENT" ?(
         <CDynamicForm
           name="diploma"
@@ -56,17 +56,17 @@ export function SideBar() {
         <CommentSection stepId={1} />
          }
       </Tabs.Item>
-      <Tabs.Item disabled title ="step 2" icon={MdDashboard}>
+      <Tabs.Item disabled title ="Үзлэг 2" icon={MdDashboard}>
         step 2
         <CommentSection stepId={1} />
       </Tabs.Item>
-      <Tabs.Item disabled title="step 3" icon={HiAdjustments}>
+      <Tabs.Item disabled title="Үзлэг 3" icon={HiAdjustments}>
         step 3
       </Tabs.Item>
-      <Tabs.Item disabled title="step 4" icon={HiClipboardList}>
+      <Tabs.Item disabled title="Үзлэг 4" icon={HiClipboardList}>
         step 4
       </Tabs.Item>
-      <Tabs.Item disabled title="step 5">
+      <Tabs.Item disabled title="Үзлэг 5">
         step 5
       </Tabs.Item>
     </Tabs>

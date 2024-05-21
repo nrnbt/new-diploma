@@ -48,10 +48,9 @@ export default function Home() {
         <div className="container mx-auto">
           <div className=" text-center flex flex-col gap-10 items-center ">
             <div>
-              <h2 className="text-2xl font-semibold">Discover Our Product</h2>
+              <h2 className="text-2xl font-semibold">Шинэ Монгол Технологийн Дээд Сургууль</h2>
               <p className="mt-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-                in ligula ut justo tempus faucibus ut ut felis.
+                МЭДЛЭГЭЭ БҮТЭЭГДЭХҮҮН БОЛГОЁ
               </p>
             </div>
             <div className="flex flex-col items-center gap-6">

@@ -28,9 +28,9 @@ const SalesThisWeek: FC = function () {
     <div className="rounded-lg bg-white p-4 shadow dark:bg-gray-800 sm:p-6 xl:p-8">
       <div className="mb-4 flex items-center justify-between">
         <div className="shrink-0">
-          <span className="text-2xl font-bold leading-none text-gray-900 dark:text-white sm:text-3xl">
+          {/* <span className="text-2xl font-bold leading-none text-gray-900 dark:text-white sm:text-3xl">
             $45,385
-          </span>
+          </span> */}
           <h3 className="text-base font-normal text-gray-600 dark:text-gray-400">
             Sales this week
           </h3>
@@ -210,7 +210,7 @@ const SalesChart: FC = function () {
   //   },
   // ];
 
-  return <>asd</>;
+  return <></>;
   // return <Chart height={420} options={options} series={series} type="area" />;
 };
 

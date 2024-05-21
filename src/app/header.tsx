@@ -7,16 +7,15 @@ function Header() {
     <header className="w-screen bg-gray-900  text-white py-4">
       <div className=" container m-auto flex justify-between items-center font-medium  ">
         <div className="container mx-auto">
-          <h1 className="text-3xl font-bold">Your Landing Page Title</h1>
-          <p className="mt-2">Welcome to your awesome landing page!</p>
+          <img src="/nmit_logo.png" alt="" />
         </div>
         <div className="flex items-center gap-10 text-xl">
-          <Link href="/">Home page</Link>
-          <Link href="/diploma">Diploma</Link>
+          <Link href="/">Хайх</Link>
+          <Link href="/diploma">Диплом</Link>
           {localStorage?.getItem("role") && (
-            <Link href="/process">Process</Link>
+            <Link href="/process">Явц</Link>
           )}{" "}
-          <Link href="/login">login</Link>
+          <Link href="/login">Нэвтрэх</Link>
         </div>
       </div>
     </header>

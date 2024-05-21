@@ -9,7 +9,7 @@ const API = async ({
   body?: any;
   headers?: Record<string, string>;
 }) => {
-  const token = localStorage.getItem("token");
+  const token = localStorage?.getItem("token");
   try {
     const commonHeaders = {
       Authorization: `Bearer ${token}`,

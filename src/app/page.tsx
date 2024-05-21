@@ -48,29 +48,24 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between ">
       <Header />
 
-      <section className="py-12 bg-gray-100 px-10 m-auto container">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
-            <div>
-              <h2 className="text-2xl font-semibold">Discover Our Product</h2>
-              <p className="mt-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-                in ligula ut justo tempus faucibus ut ut felis.
-              </p>
-              <input
-                type="text"
-                value={searchText}
-                onChange={(e) => setSearchText(e.target.value)}
-                placeholder="Enter search text and press Enter..."
-                className="mt-4 p-2 border border-gray-300 rounded"
-              />
-            </div>
-            <div>
-              <img src="/sec.png" alt="Product" className="w-full rounded-lg" />
-            </div>
+      <section className="relative py-12 px-10 m-auto container" style={{ backgroundImage: "url('/sec.png')", backgroundSize: 'cover', backgroundPosition: 'center', height: '100vh' }}>
+        <div className="absolute inset-0 flex justify-center items-center">
+          <div className="text-center">
+            <h2 className="text-2xl font-semibold text-white">Шинэ Монгол Технологийн Дээд Сургууль</h2>
+            <p className="mt-4 text-white">
+              МЭДЛЭГЭЭ БҮТЭЭГДЭХҮҮН БОЛГОЁ
+            </p>
+            <input
+              type="text"
+              value={searchText}
+              onChange={(e) => setSearchText(e.target.value)}
+              placeholder="Диплом хайх"
+              className="mt-4 p-2 border border-gray-300 rounded"
+            />
           </div>
         </div>
       </section>
+
       <section className="py-12 bg-white">
         <div className="container mx-auto">
           <h2 className="text-3xl font-semibold text-center">Our Features</h2>
